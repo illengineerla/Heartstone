@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body style="background-image: url(images/bg.jpg); background-size: 100%">
+	<div class="px-0" style="height: 400px;">
+		<h1 class="text-light">Враг</h1>
+		<div class="player"></div>
+	</div>
+	<div class="enemy px-0" style="height: 400px;">
+		<h1 class="text-light">Игрок</h1>
+	</div>
+<script>
+	let player = document.querySelector(".player")
+	let imgs = ['images/0.png','images/1.png','images/2.png','images/3.png','images/4.png','images/5.png','images/6.png','images/7.png','images/8.png','images/9.png','images/10.png']
+	
+	let getRandom1 = function(){
+		let rand = Math.random()*4
+		let round = Math.round(rand)
+		return round
+	}
+
+	let getRandom2 = function(){
+		let rand = Math.random()*11
+		let round = Math.round(rand)
+		return round
+	}
+
+	let createCards = function(arg){
+		for(let index = 0; index<arg; index = index + 1){
+			let newImg = document.createElement('img');
+			document.body.appendChild(newImg);
+			newImg.src = imgs[getRandom2()]
+			newImg.style.width = '150px'
+
+		}
+	}
+	let createC = function(){
+		createCards(getRandom1())
+	}
+	
+		
+	
+</script>
+		
+</body>
+</html>
